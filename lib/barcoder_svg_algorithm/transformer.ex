@@ -1,6 +1,6 @@
 defmodule BarcoderSvgAlgorithm.Transformer do
   @doc"""
-  test
+  Give a list of binary, this will transform a list of binary into a list of tupple that capture the index of value 1 and width that block.
   ## Examples
       iex> BarcoderSvgAlgorithm.Transformer.transform([0,1,1,1,0,0,0,1])
       [{1, 3}, {7, 1}]
@@ -16,7 +16,7 @@ defmodule BarcoderSvgAlgorithm.Transformer do
 
 
   @doc"""
-  test
+  Give a list of binary. This will transform the list into a list of tuples in which the 0 has been filtered out and the tuple contains the information of the index, and quantity of value 1 in a row.
   ## Examples
       iex> BarcoderSvgAlgorithm.Transformer.first_transform([0,1,1,1,0,0,0,1])
       [{1, 1}, {2, 1}, {3, 1}, {7, 1}]
@@ -32,7 +32,7 @@ defmodule BarcoderSvgAlgorithm.Transformer do
   defp first_map([head | tail], index, acc), do: first_map(tail, index + 1, [ {index, head} | acc ])
 
   @doc"""
-  test
+  Give a list of tupple, this will reduce the list, by summing up the tupples which are incremental by 1.
   ## Examples
       iex> BarcoderSvgAlgorithm.Transformer.second_transform([{1, 1}, {2, 1}, {3, 1}, {7, 1}])
       [{1, 3}, {7, 1}]

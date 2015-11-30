@@ -2,7 +2,7 @@ defmodule BarcoderSvgAlgorithm.SvgBuilder do
   import BarcoderSvgAlgorithm.Group
 
   @doc """
-  test
+  Give a list of binary, this will build the svg path.
   ## Examples
       iex> BarcoderSvgAlgorithm.SvgBuilder.path([1,0,0,1,1])
       "v10h1V1h2v10h2V1"
@@ -16,7 +16,7 @@ defmodule BarcoderSvgAlgorithm.SvgBuilder do
   defp build_path([ {0, width} | tail ], acc), do: build_path(tail, acc <> "h#{width}")
 
   @doc """
-  test
+  Given a list of binary, this will build a barcoded svg.
   ## Examples
       iex> BarcoderSvgAlgorithm.SvgBuilder.build_svg([1,0,0,1,1])
       "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'><path d='M1 1v10h1V1h2v10h2V1 Z'></path></svg>"
