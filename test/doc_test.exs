@@ -1,4 +1,4 @@
 defmodule DocTest do
   use ExUnit.Case
-  doctest BarcorderSvgAlgorithm
+  doctest BarcoderSvgAlgorithm.Transformer
 end
